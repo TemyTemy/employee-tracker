@@ -2,19 +2,25 @@ const employee = require("./lib/employee");
 const department = require("./lib/department");
 const role = require("./lib/role");
 const inquirer = require('inquirer');
+const cTable = require('console.table');
 
 const menuQuestions = [
     {
      type: 'list',
      name: 'choice',
      choices: ['Add Employee', 'Update Employee',
-               'Remove Employee', 'View All Employee',
+               'Remove Employee', 'View All Employes',
                'Exit']
     } 
 ];
 
 const addNewEmployee = (ans) => {
-    employee.addNewEmployee(ans);
+    employee.createEmployee(ans, presentMenu);
+}
+
+const updateExistingEmployee = (ans, defaultValues) => {
+    console.log(ans);
+    employee.updateExistingEmployee(ans, defaultValues.employee_id)
 }
 
 const addNewDepartment = (ans) => {
@@ -32,6 +38,7 @@ const displayDepartmentsToSelect = (ans) => {
 
 const displayRolesAnswers = (ans) => {
     console.log(ans);
+    role.createRole(ans);
 }
 
 
@@ -41,6 +48,7 @@ const displayRolesAnswers = (ans) => {
 //department.listAllDepartments(displayDepartmentsToSelect, undefined);
 //role.promptForDetails(displayRolesAnswers);
 
+presentMenu();
 
 function presentMenu() {
     inquirer.prompt(menuQuestions)
@@ -49,16 +57,34 @@ function presentMenu() {
     });
 }
 
+function initiateEmployeeUpdate(ans) {    
+    employee.promptForDetails(updateExistingEmployee, ans.employee)    
+}
+
+function selectEmployeeForUpdate(list) {
+    employee.selectEmployee(list, "Select the employee you want to update", initiateEmployeeUpdate);
+}
+
+function doListAllEmployees(res) {
+    console.table(result);
+    presentMenu();
+}
 
 
 function executeChoice(choice) {
     switch (choice) {
         case 'Add Employee':
-            employee.promptForDetails(addNewEmployee);            
+            employee.promptForDetails(addNewEmployee, undefined);            
             break;
-        case 'Exit':                
-            console.log('Bye');
+        case 'Update Employee':
+            employee.listEmployees(selectEmployeeForUpdate);
+            break;   
+        case 'View All Employes':
+            employee.listEmployees(doListAllEmployees);
+            break;            
         default:
             console.log('Nothing');    
+        case 'Exit':                
+            console.log('Bye');
     }        
 }
