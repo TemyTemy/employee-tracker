@@ -69,8 +69,8 @@ function selectDepartmentForDeletion(list) {
     department.selectDepartment(list, initiateDepartmentDeletion);
 }
 
-function initiateDepartmentDeletion(ans) {    
-    department.deleteDepartment(ans.id, presentMenu);
+function initiateDepartmentDeletion(ans) {      
+    department.deleteDepartment(ans.department.id, presentMenu);
 }
 
 function selectDepartmentForEmployeesListing(list, originalCallBack) {
