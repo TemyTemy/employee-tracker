@@ -8,14 +8,17 @@ const menuQuestions = [
     {
      type: 'list',
      name: 'choice',
-     choices: ['Add Employee', 'Update Employee',
-               'Remove Employee', 'View All Employees',
+     choices: ['Add Employee', 
+               'Update Employee',
+               'Remove Employee',
+               'View All Employees',
                'View Employees by department',
                'View Employees by manager',
                'Add a New Department',
                'View Departments',
                'Remove Department',
                'Add New Role',
+               'Remove Role',
                'View Roles',
                'Exit']
     } 
@@ -100,6 +103,10 @@ function initiateRoleCreation(ans) {
     role.createRole(ans,  presentMenu);   
 }
 
+function initiateRoleDeletion(ans) {
+    role.deleteRole(ans.role.id,  presentMenu);   
+}
+
 function initiateDepartmentCreation(ans) {
     department.createDepartment(ans,  presentMenu);   
 }
@@ -135,7 +142,10 @@ function executeChoice(choice) {
             break;            
         case 'Add New Role':
             role.promptForDetails(initiateRoleCreation);
-            break;    
+            break; 
+        case 'Remove Role':
+            role.listAllRoles(initiateRoleDeletion);
+            break;        
         case 'View Roles':
             role.listAllRoles(doRolesListing);
             break;    
