@@ -104,7 +104,11 @@ function initiateRoleCreation(ans) {
 }
 
 function initiateRoleDeletion(ans) {
-    role.deleteRole(ans.role.id,  presentMenu);   
+    role.selectRole(ans, doRoleDelete)    
+}
+
+function doRoleDelete(answer) {    
+    role.deleteRole(answer.role.id, presentMenu);
 }
 
 function initiateDepartmentCreation(ans) {
