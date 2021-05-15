@@ -10,6 +10,11 @@ const menuQuestions = [
      name: 'choice',
      choices: ['Add Employee', 'Update Employee',
                'Remove Employee', 'View All Employes',
+               'View Employees by department',
+               'View Employees by manager',
+               'View Departments',
+               'Add New Role',
+               'View Roles',
                'Exit']
     } 
 ];
@@ -20,7 +25,7 @@ const addNewEmployee = (ans) => {
 
 const updateExistingEmployee = (ans, defaultValues) => {
     console.log(ans);
-    employee.updateExistingEmployee(ans, defaultValues.employee_id)
+    employee.updateExistingEmployee(ans, defaultValues.employee_id, presentMenu);
 }
 
 const addNewDepartment = (ans) => {
@@ -61,12 +66,53 @@ function initiateEmployeeUpdate(ans) {
     employee.promptForDetails(updateExistingEmployee, ans.employee)    
 }
 
+function initiateEmployeeDeletion(ans) {    
+    console.log(ans.employee.employee_id);
+    employee.doDeleteEmployee(ans.employee.employee_id, presentMenu);
+}
+
 function selectEmployeeForUpdate(list) {
     employee.selectEmployee(list, "Select the employee you want to update", initiateEmployeeUpdate);
 }
 
-function doListAllEmployees(res) {
+function selectEmployeeForListingByManager(list) {
+    employee.selectEmployee(list, "Select the manager from list", initiateListEmployeeByManager);
+}
+
+function initiateListEmployeeByManager(ans) {    
+    employee.listEmployeesByManager(ans.employee.employee_id, doListEmployee);
+}
+
+function selectEmployeeForDeletion(list) {
+    employee.selectEmployee(list, "Select the employee you want to delete", initiateEmployeeDeletion);
+}
+
+
+function selectDepartmentForEmployeesListing(list, originalCallBack) {
+    department.selectDepartment(list, initiateListEmployeeByDepartment);
+}
+
+function initiateListEmployeeByDepartment(ans) {
+    employee.listEmployeesByDepartment(ans.department.id, doListEmployee);
+}
+
+function doListEmployee(result) {
     console.table(result);
+    presentMenu();
+}
+
+function doDepartmentListing(result) {
+    console.table(result);
+    presentMenu();
+}
+
+function doRolesListing(result) {
+    console.table(result);
+    presentMenu();
+}
+
+function initiateRoleCreation(ans) {
+    console.log(ans);
     presentMenu();
 }
 
@@ -79,9 +125,27 @@ function executeChoice(choice) {
         case 'Update Employee':
             employee.listEmployees(selectEmployeeForUpdate);
             break;   
-        case 'View All Employes':
-            employee.listEmployees(doListAllEmployees);
-            break;            
+        case 'View All Employees':
+            employee.listEmployees(doListEmployee);
+            break;
+        case 'View Employees by department':
+            department.listAllDepartments(selectDepartmentForEmployeesListing, undefined);
+            break;
+        case 'View Employees by manager':
+            employee.listEmployees(selectEmployeeForListingByManager);
+            break;              
+        case 'Remove Employee':
+            employee.listEmployees(selectEmployeeForDeletion);
+            break;
+        case 'View Departments':
+            department.listAllDepartments(doDepartmentListing);
+            break;
+        case 'Add New Role':
+            role.promptForDetails(initiateRoleCreation);
+            break;    
+        case 'View Roles':
+            role.listAllRoles(doRolesListing);
+            break;    
         default:
             console.log('Nothing');    
         case 'Exit':                
