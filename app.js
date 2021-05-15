@@ -9,11 +9,12 @@ const menuQuestions = [
      type: 'list',
      name: 'choice',
      choices: ['Add Employee', 'Update Employee',
-               'Remove Employee', 'View All Employes',
+               'Remove Employee', 'View All Employees',
                'View Employees by department',
                'View Employees by manager',
                'Add a New Department',
                'View Departments',
+               'Remove Department',
                'Add New Role',
                'View Roles',
                'Exit']
@@ -29,34 +30,17 @@ const updateExistingEmployee = (ans, defaultValues) => {
     employee.updateExistingEmployee(ans, defaultValues.employee_id, presentMenu);
 }
 
-const addNewDepartment = (ans) => {
-    department.selectDepartment(ans).then((answers) => console.log(answers));
-   // department.createDepartment(ans);
-}
-
-const showSelectedDepartment = (selected) => {
-    console.log(selected);
-}
-
-const displayDepartmentsToSelect = (ans) => {
-   department.selectDepartment(ans, showSelectedDepartment);
-}
-
-const displayRolesAnswers = (ans) => {
-    console.log(ans);
-    role.createRole(ans);
-}
-
-
 
 //employee.promptForDetails(addNewEmployee);
 //department.promptForDetails(addNewDepartment);
 //department.listAllDepartments(displayDepartmentsToSelect, undefined);
 //role.promptForDetails(displayRolesAnswers);
 
+console.clear();
 presentMenu();
 
-function presentMenu() {
+
+function presentMenu() {    
     inquirer.prompt(menuQuestions)
     .then((answers) => {
         executeChoice(answers.choice);
@@ -117,11 +101,10 @@ function initiateRoleCreation(ans) {
 }
 
 function initiateDepartmentCreation(ans) {
-    role.createRole(ans,  presentMenu);   
+    department.createDepartment(ans,  presentMenu);   
 }
 
-
-function executeChoice(choice) {
+function executeChoice(choice) {       
     switch (choice) {
         case 'Add Employee':
             employee.promptForDetails(addNewEmployee, undefined);            
@@ -142,7 +125,8 @@ function executeChoice(choice) {
             employee.listEmployees(selectEmployeeForDeletion);
             break;
         case 'Add a New Department':
-
+            department.promptForDetails(initiateDepartmentCreation);
+            break;   
         case 'View Departments':
             department.listAllDepartments(doDepartmentListing);
             break;
