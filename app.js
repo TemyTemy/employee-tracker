@@ -25,16 +25,9 @@ const addNewEmployee = (ans) => {
     employee.createEmployee(ans, presentMenu);
 }
 
-const updateExistingEmployee = (ans, defaultValues) => {
-    console.log(ans);
+const updateExistingEmployee = (ans, defaultValues) => { 
     employee.updateExistingEmployee(ans, defaultValues.employee_id, presentMenu);
 }
-
-
-//employee.promptForDetails(addNewEmployee);
-//department.promptForDetails(addNewDepartment);
-//department.listAllDepartments(displayDepartmentsToSelect, undefined);
-//role.promptForDetails(displayRolesAnswers);
 
 console.clear();
 presentMenu();
