@@ -65,6 +65,13 @@ function selectEmployeeForDeletion(list) {
     employee.selectEmployee(list, "Select the employee you want to delete", initiateEmployeeDeletion);
 }
 
+function selectDepartmentForDeletion(list) {
+    department.selectDepartment(list, initiateDepartmentDeletion);
+}
+
+function initiateDepartmentDeletion(ans) {    
+    department.deleteDepartment(ans.id, presentMenu);
+}
 
 function selectDepartmentForEmployeesListing(list, originalCallBack) {
     department.selectDepartment(list, initiateListEmployeeByDepartment);
@@ -123,6 +130,9 @@ function executeChoice(choice) {
         case 'View Departments':
             department.listAllDepartments(doDepartmentListing);
             break;
+        case 'Remove Department':
+            department.listAllDepartments(selectDepartmentForDeletion);
+            break;            
         case 'Add New Role':
             role.promptForDetails(initiateRoleCreation);
             break;    
