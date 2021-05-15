@@ -12,6 +12,7 @@ const menuQuestions = [
                'Remove Employee', 'View All Employes',
                'View Employees by department',
                'View Employees by manager',
+               'Add a New Department',
                'View Departments',
                'Add New Role',
                'View Roles',
@@ -112,8 +113,11 @@ function doRolesListing(result) {
 }
 
 function initiateRoleCreation(ans) {
-    console.log(ans);
-    presentMenu();
+    role.createRole(ans,  presentMenu);   
+}
+
+function initiateDepartmentCreation(ans) {
+    role.createRole(ans,  presentMenu);   
 }
 
 
@@ -137,6 +141,8 @@ function executeChoice(choice) {
         case 'Remove Employee':
             employee.listEmployees(selectEmployeeForDeletion);
             break;
+        case 'Add a New Department':
+
         case 'View Departments':
             department.listAllDepartments(doDepartmentListing);
             break;
