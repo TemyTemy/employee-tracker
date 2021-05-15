@@ -16,6 +16,7 @@ const menuQuestions = [
                'View Employees by manager',
                'Add a New Department',
                'View Departments',
+               'View Total Utilized Budget of a Department',
                'Remove Department',
                'Add New Role',
                'Remove Role',
@@ -80,8 +81,16 @@ function selectDepartmentForEmployeesListing(list, originalCallBack) {
     department.selectDepartment(list, initiateListEmployeeByDepartment);
 }
 
+function selectDepartmentForEmployeesSalaryListing(list, originalCallBack) {
+    department.selectDepartment(list, initiateListEmployeeSalaryByDepartment);
+}
+
 function initiateListEmployeeByDepartment(ans) {
     employee.listEmployeesByDepartment(ans.department.id, doListEmployee);
+}
+
+function initiateListEmployeeSalaryByDepartment(ans) {
+    employee.getEmployeeSalaryByDepartment(ans.department.id, doListEmployee);
 }
 
 function doListEmployee(result) {
@@ -141,6 +150,9 @@ function executeChoice(choice) {
         case 'View Departments':
             department.listAllDepartments(doDepartmentListing);
             break;
+        case 'View Total Utilized Budget of a Department':
+            department.listAllDepartments(selectDepartmentForEmployeesSalaryListing, undefined);            
+            break;    
         case 'Remove Department':
             department.listAllDepartments(selectDepartmentForDeletion);
             break;            
