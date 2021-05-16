@@ -21,7 +21,7 @@ A command line solution for managing an employee database.
 
 **Image 1**  
 
-  ![alt text](https://github.com/TemyTemyemployee-tracker/blob/master/assets/screenshot1 - create employee.png)
+  ![alt text](https://github.com/TemyTemyemployee-tracker/blob/master/assets/screenshot1createemployee.png)
 
 
 **Image 2**
