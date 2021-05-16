@@ -55,7 +55,7 @@ A command line solution for managing an employee database.
 ## Links on Github
 
 - The source code repository is available at this link: https://github.com/TemyTemy/employee-tracker
-- The video link for a demo showing all application functionalities is available at:https://drive.google.com/file/d/1FnaojCgtVOGhlEKIibRF9IcoLsp-ejQo/view
+- The video link for a demo showing all application functionalities is available at: https://drive.google.com/file/d/1FnaojCgtVOGhlEKIibRF9IcoLsp-ejQo/view
 
 ## License
 MIT
