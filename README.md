@@ -30,7 +30,7 @@ A command line solution for managing an employee database.
 
 **Image 3**
 
- !![alt text](https://github.com/TemyTemy/employee-tracker/blob/main/Assets/screenshot%203%20-%20list%20all%20employees.PNG)
+ ![alt text](https://github.com/TemyTemy/employee-tracker/blob/main/Assets/screenshot%203%20-%20list%20all%20employees.PNG)
 
 
 
