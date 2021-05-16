@@ -47,6 +47,11 @@ A command line solution for managing an employee database.
  ![alt text](https://github.com/TemyTemy/employee-tracker/blob/main/Assets/screenshot%205%20-%20list%20%20employees%20by%20manager.PNG)
 
 
+## User Journey
+ ![alt text](https://github.com/TemyTemy/employee-tracker/blob/main/Assets/Employee%20Tracker%20Recorder.gif)
+
+
+
 ## Links on Github
 
 - The source code repository is available at this link: https://github.com/TemyTemy/employee-tracker
