@@ -21,55 +21,36 @@ A command line solution for managing an employee database.
 
 **Image 1**  
 
-  ![alt text](https://github.com/TemyTemyemployee-tracker/blob/master/assets/screenshot1createemployee.png)
+  ![alt text](https://github.com/TemyTemy/employee-tracker/blob/main/Assets/screenshot1createemployee.png)
 
 
 **Image 2**
 
- ![alt text](https://github.com/TemyTemy/weather-dashboard/blob/master/assets/screenshot2.PNG)
+ ![alt text](https://github.com/TemyTemy/employee-tracker/blob/main/Assets/screenshot2%20-%20update%20employee.PNG)
 
 **Image 3**
 
- !![alt text](https://github.com/TemyTemy/weather-dashboard/blob/master/assets/screenshot3.PNG)
+ !![alt text](https://github.com/TemyTemy/employee-tracker/blob/main/Assets/screenshot%203%20-%20list%20all%20employees.PNG)
 
 
 
 
 **Image 4**
 
- ![alt text](https://github.com/TemyTemy/weather-dashboard/blob/master/assets/screenshot4.PNG)
+ ![alt text](https://github.com/TemyTemy/employee-tracker/blob/main/Assets/screenshot%204%20-%20list%20%20employees%20by%20department.PNG)
 
 
 
 
 **Image 5**
 
- ![alt text](https://github.com/TemyTemy/weather-dashboard/blob/master/assets/screenshot5.PNG)
-
-
-
-**Image 6**
-
- ![alt text](https://github.com/TemyTemy/weather-dashboard/blob/master/assets/screenshot6.PNG)
-
-
-
-**Image 7**
-
- ![alt text](https://github.com/TemyTemy/weather-dashboard/blob/master/assets/screenshot7.PNG)
-
-
-
-
-
-## Reference
-https://openweathermap.org/
+ ![alt text](https://github.com/TemyTemy/employee-tracker/blob/main/Assets/screenshot%205%20-%20list%20%20employees%20by%20manager.PNG)
 
 
 ## Links on Github
 
-- The source code repository is available at this link: https://github.com/TemyTemy/weather-dashboard
-- The home page to the website is available at this link: https://temytemy.github.io/weather-dashboard/
+- The source code repository is available at this link: https://github.com/TemyTemy/employee-tracker
+- The video link for a demo showing all application functionalities is available at:https://drive.google.com/file/d/1FnaojCgtVOGhlEKIibRF9IcoLsp-ejQo/view
 
 ## License
 MIT
