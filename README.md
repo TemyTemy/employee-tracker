@@ -21,7 +21,7 @@ A command line solution for managing an employee database.
 
 **Image 1**  
 
-  ![alt text](https://github.com/TemyTemy/weather-dashboard/blob/master/assets/screenshot1.PNG)
+  ![alt text](https://github.com/TemyTemyemployee-tracker/blob/master/assets/screenshot1 - create employee.png)
 
 
 **Image 2**
