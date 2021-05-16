@@ -1,9 +1,7 @@
 # Employee Tracker
 A command line solution for managing an employee database. 
 
-** Technologies Used: NodeJS, Mysql, JavaScript **
-
-
+**Technologies Used: NodeJS, Mysql, JavaScript**
 
 ## Features
 
