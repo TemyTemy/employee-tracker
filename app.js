@@ -8,6 +8,9 @@ const menuQuestions = [
     {
      type: 'list',
      name: 'choice',
+     pageSize: 20,
+     loop: false,
+     message: 'What will you like to do ?',
      choices: ['Add Employee', 
                'Update Employee',
                'Remove Employee',
